@@ -40,3 +40,79 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+
+
+let cta = document.getElementById("cta-img");
+
+cta.setAttribute('src', siteContent.cta["img-src"]);
+
+
+let navigation = document.querySelectorAll('nav a');
+
+navigation.forEach((element, index,)=>{
+element.textContent = siteContent.nav[`nav-item-${index, + 1}`]
+
+});
+
+
+
+let header = document.querySelector("h1");
+header.textContent = siteContent["cta"]["h1"];
+
+
+let btnCta = document.querySelector("button");
+btnCta.textContent = siteContent["cta"]["button"];
+
+let topContent = document.querySelectorAll(".text-content h4");
+console.log(topContent);
+
+
+for (let i = 0; i < topContent.length; i++) {
+  if (i % 2 == 0) {
+    topContent[i].textContent = siteContent["main-content"]["features-h4"];
+  } else {
+    topContent[i].textContent = siteContent["main-content"]["about-h4"];
+  }
+}
+let midImg = document.getElementById("middle-img");
+midImg.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
+let btmContent = document.querySelectorAll(".text-content p");
+console.log(btmContent);
+
+for (let i = 0; i < btmContent.length; i++) {
+  if (i % 2 == 0) {
+    btmContent[i].textContent = siteContent["main-content"]["features-content"];
+  } else {
+    btmContent[i].textContent = siteContent["main-content"]["about-content"];
+  }
+}
+//contact section
+let contact = document.querySelector('.contact h4');
+contact.textContent = siteContent["contact"]["contact-h4"];
+
+let contactsP = document.querySelectorAll('.contact p');
+contactsP[0].textContent = siteContent["contact"]["address"];
+contactsP[1].textContent = siteContent["contact"]["phone"];
+contactsP[2].textContent = siteContent["contact"]["email"];
+
+let footer = document.querySelector('footer p');
+footer.textContent = siteContent['footer']['copyright'];
+
+
+
+//green nav bar
+const navbarGreen = document.querySelectorAll('nav a');
+for(let i = 1;i<7;i++){
+navbarGreen[i-1].style.color = 'green'};
+
+//app and prepend
+const navbarParent = document.querySelector('nav');
+const Sucks = document.createElement('a');
+Sucks.textContent="Sucks"
+navbarParent.append(Sucks);
+
+const This = document.createElement('a');
+This.textContent="This"
+navbarParent.prepend(This);
